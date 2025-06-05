@@ -61,21 +61,10 @@ const App = () => {
 return (
   <div className="App">
     {/* Offcanvas toggle */}
-    <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style={{ position: 'absolute', top: 10, right: 10, zIndex: 1000 }}>
-      ☰
-    </button>
-
-    {/* Offcanvas content */}
-    <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-      <div className="offcanvas-header">
-        <h5 className="offcanvas-title" id="offcanvasRightLabel">Travel Details</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div className="offcanvas-body">
-        You can show tips, suggestions, or alternate routes here.
-      </div>
-    </div>
-
+  <div className='title'>
+    <img src="/location.svg" alt="logo" />
+    <h1>Safe trip</h1>
+  </div>
     {/* Search Panel */}
     <div className="search-panel">
       <input
@@ -90,7 +79,7 @@ return (
         onChange={(e) => setToPlace(e.target.value)}
         placeholder="To (e.g. Mumbai)"
       />
-      <button onClick={fetchRoute}>Search</button>
+      <button  onClick={fetchRoute}>Search</button>
     </div>
 
     {/* Map Fullscreen */}
