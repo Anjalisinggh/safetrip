@@ -1,38 +1,168 @@
+/* Global Styles */
+body, html, #root, .App {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
 .App {
+  position: relative;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App {
+  height: 100%;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header */
+.App h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Input Container */
+.input-container,
+.search-panel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Search Panel Overlay */
+.search-panel {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Inputs */
+input[type='text'],
+.search-panel input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+/* Buttons */
+button,
+.search-panel button {
+  padding: 0.5rem 1rem;
+  background-color: #2e86de;
   color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover,
+.search-panel button:hover {
+  background-color: #1c6ed2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Map Container */
+.map-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Debug Output */
+pre {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  max-height: 300px;
+  overflow: auto;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  z-index: 1000;
+  position: relative;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+/* Loading Spinner Placement */
+.loader {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
   }
-  to {
-    transform: rotate(360deg);
+
+  input[type='text'],
+  .search-panel input {
+    width: 100%;
   }
+
+  .App {
+    padding: 1rem;
+  }
+}
+
+/* Optional Dark Mode */
+body.dark,
+body.dark .App {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+}
+
+body.dark .search-panel {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+body.dark input,
+body.dark .search-panel input {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark button,
+body.dark .search-panel button {
+  background-color: #4a90e2;
+}
+
+body.dark button:hover {
+  background-color: #357ab7;
+}
+body.dark pre {
+  background: rgba(0, 0, 0, 0.7);
+  color: #e0e0e0;
 }

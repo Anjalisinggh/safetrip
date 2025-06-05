@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch'); // If you are on Node 18+, you can remove this line and just use fetch directly
 require('dotenv').config();
 
 const app = express();
@@ -45,14 +45,7 @@ app.get('/api/traffic', async (req, res) => {
   }
 });
 
-
-
-
 const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
-});
-
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
 });
