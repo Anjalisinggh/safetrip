@@ -37,6 +37,7 @@ html, body, #root, .App {
 
 .title h1 {
   font-size: 24px;
+  cursor: pointer;
   color: #333;
   margin: 0;
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -49,6 +50,11 @@ html, body, #root, .App {
 }
 
 /* Search Panel */
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
 .search-panel {
   background: white;
   padding: 16px;
@@ -72,39 +78,44 @@ html, body, #root, .App {
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 8px 12px;
+  width: 100%;
 }
 
+/* Icon/Image Styling */
 .input-group img {
   width: 20px;
   margin-right: 10px;
+  flex-shrink: 0; /* Prevent image from shrinking too much */
 }
 
 .input-group .gps {
-  width: 18px;
+  width: 30px;
   padding: 0 5px;
- 
   cursor: pointer;
+  flex-shrink: 0;
 }
 
+/* Input Styling */
 .input-group input {
   border: none;
   outline: none;
   flex: 1;
   background: transparent;
   font-size: 14px;
+  min-width: 0; /* Allow input to shrink nicely */
 }
 
-/* Input + Button Styles */
+/* Text Input Styling */
 input[type='text'],
 .search-panel input {
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  min-width: 200px;
   width: 100%;
 }
 
+/* Button Styling */
 button,
 .search-panel button {
   padding: 0.5rem 1rem;
@@ -133,6 +144,35 @@ button:hover,
   width: 18px;
   height: 18px;
 }
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 480px) {
+  .search-panel {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .input-group img {
+    width: 16px;
+    margin-right: 8px;
+  }
+
+  .input-group .gps {
+    width: 16px;
+    padding: 0 4px;
+  }
+
+  .input-group input {
+    font-size: 13px;
+  }
+
+  button,
+  .search-panel button {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+}
+
 
 /* Map Container */
 .map-container {

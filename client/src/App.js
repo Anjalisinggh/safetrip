@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import MapView from "./components/MapView";
 import "leaflet/dist/leaflet.css";
+import CrimeData from "./CrimeData";
 
 const App = () => {
   const [fromPlace, setFromPlace] = useState("");
@@ -120,6 +121,7 @@ const App = () => {
             className="gps"
             src="/current.svg"
             alt="Use current location"
+            title="Use your current location"
             onClick={useCurrentLocation}
             style={{ cursor: "pointer" }}
           />
@@ -174,6 +176,10 @@ const App = () => {
         </button>
       </div>
 
+      {/* Crime Data */}
+      <div style={{ border: "1px solid gray", padding: "1rem" }}>
+  <CrimeData />
+</div>
       {/* Map Fullscreen */}
       <div className="map-container">
         <MapView routeData={routeData} />
@@ -197,6 +203,9 @@ const App = () => {
           {error}
         </p>
       )}
+   
+    
+
     </div>
   );
 };
