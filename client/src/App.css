@@ -297,3 +297,139 @@ body.dark pre {
 .suggestions li:hover {
   background-color: #f0f0f0;
 }
+
+
+.time-info {
+  position: absolute;
+  top: 300px;
+  left: 10px;
+  z-index: 1000;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  max-width: 250px;
+}
+
+.map-view {
+  position: relative;
+}
+.map-view {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.route-info-panel {
+  width: 300px;
+  padding: 20px;
+  background: #f8f9fa;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.map-container {
+  flex: 1;
+  height: 100%;
+}
+
+.info-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.safety-indicator {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.safety-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid #333;
+}
+
+.safety-tips {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.safety-tips ul {
+  padding-left: 20px;
+  margin: 5px 0 0 0;
+}
+
+.safety-tips li {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+
+.safety-popup {
+  min-width: 200px;
+}
+
+.safety-popup .safety-level {
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #4285F4;
+  transition: width 0.3s ease;
+}
+
+.transport-modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.transport-mode {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.transport-mode h5 {
+  margin: 0 0 5px 0;
+  color: #4285F4;
+}
+
+.transport-mode p {
+  margin: 3px 0;
+  font-size: 0.9em;
+}
+
+.safety-toggle {
+  margin-top: 10px;
+}
+
+.safety-toggle label {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.safety-toggle input {
+  margin-right: 8px;
+}
